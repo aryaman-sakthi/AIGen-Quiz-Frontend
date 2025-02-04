@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -19,7 +20,7 @@ export class MenuComponent implements AfterViewInit {
   runTimeOut: any;
   runNextAuto: any;
 
-  constructor(private renderer: Renderer2) {}
+  constructor(private renderer: Renderer2, private router: Router) {}
 
   ngAfterViewInit() {
     const nextDom = this.nextButton.nativeElement;
@@ -63,5 +64,10 @@ export class MenuComponent implements AfterViewInit {
       carouselDom.classList.remove('next');
       carouselDom.classList.remove('prev');
     }, this.timeRunning);
+  }
+
+  startImageQuiz() {
+    console.log("Image Quiz Selected");
+    this.router.navigate(['/quiz/images']);
   }
 }

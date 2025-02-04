@@ -1,0 +1,10 @@
+<!-- image-quiz.component.html -->
+<div class="quiz-container">
+    <h2>Identify the AI-generated image</h2>
+    <div class="image-grid">
+      <img *ngFor="let img of images"
+           [src]="img.path"
+           alt="Quiz image"
+           (click)="checkAnswer(img)" />
+    </div>
+</div>

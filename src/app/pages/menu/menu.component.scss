@@ -323,4 +323,18 @@ html, body {
         width: 55px;
         height: 55px;
     }
+
+    .carousel.prev .category .item:nth-child(2) img{
+        animation: outFrameTab 0.5s linear 1 forwards;
+    }
+
+    @keyframes outFrameTab{
+        to{
+            width: 150px;
+            height: 220px;
+            bottom: 100px;
+            left: 50%;
+            border-radius: 20px;
+        }
+    }
 }
