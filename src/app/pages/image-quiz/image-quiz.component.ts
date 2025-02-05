@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { QuizService, QuizImage } from '../../service/image-quiz.service';
+import { ImageQuizService, QuizImage } from '../../service/image-quiz.service';
 import { sequenceEqual } from 'rxjs';
 
 @Component({
@@ -12,13 +12,13 @@ import { sequenceEqual } from 'rxjs';
 export class ImageQuizComponent implements OnInit {
   images: QuizImage[] = [];
 
-  constructor(private quizService: QuizService) {}
+  constructor(private quizService: ImageQuizService) {}
 
   ngOnInit(): void {
       this.initializeQuestions();
   }
 
-  // Initialize the questionsand load the first one
+  // Initialize the questions and load the first one
   initializeQuestions() {
     this.quizService.initializeQuestions();
     this.loadQuestion(); // load the first question

@@ -8,13 +8,15 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './pages/menu/menu.component';
 import { ImageQuizComponent } from './pages/image-quiz/image-quiz.component';
+import { VideoQuizComponent } from './pages/video-quiz/video-quiz.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     MenuComponent,
-    ImageQuizComponent
+    ImageQuizComponent,
+    VideoQuizComponent
   ],
   imports: [
     BrowserModule,

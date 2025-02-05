@@ -1,0 +1,16 @@
+<div *ngIf="!quizOver">
+    <h2>Is this video AI-generated or Real?</h2>
+    
+    <video *ngIf="currentVideo" width="600" height="400"  [src]="currentVideo.path" autoplay>
+        Your browser does not support the video tag.
+    </video>
+    
+    <div>
+        <button (click)="checkAnswer(false)">Real</button>
+        <button (click)="checkAnswer(true)">AI</button>
+    </div>
+</div>
+
+<div *ngIf="quizOver">
+    <h2>Quiz Over</h2>
+</div>

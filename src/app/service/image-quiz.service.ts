@@ -9,18 +9,18 @@ export interface QuizImage {
 @Injectable({
     providedIn: 'root'
 })
-export class QuizService {
+export class ImageQuizService {
     // Predifined list of categories 
     private categories: string[] = ['Animal','Building','Car','Flower',
                                     'Food','Lake','Mountain','Painting',
-                                    'Sky','Tree']; // Add more you want more questions
+                                    'Sky','Tree']; // Add more if you want more questions
     
     private questionQueue: string[] = [];  //Queue questions
 
     initializeQuestions() {
-        this.questionQueue = [...this.categories] // copy categories into question queue
+        this.questionQueue = [...this.categories]; // copy categories into question queue
 
-        //Shuffle the questions 
+        // Shuffle the questions 
         this.questionQueue.sort(() => Math.random() - 0.5);
     }
 
