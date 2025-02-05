@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './pages/menu/menu.component';
 import { ImageQuizComponent } from './pages/image-quiz/image-quiz.component';
 import { VideoQuizComponent } from './pages/video-quiz/video-quiz.component';
+import { SongQuizComponent } from './pages/song-quiz/song-quiz.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,14 @@ import { VideoQuizComponent } from './pages/video-quiz/video-quiz.component';
     SignupComponent,
     MenuComponent,
     ImageQuizComponent,
-    VideoQuizComponent
+    VideoQuizComponent,
+    SongQuizComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

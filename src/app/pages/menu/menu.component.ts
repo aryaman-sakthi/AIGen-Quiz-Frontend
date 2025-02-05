@@ -75,4 +75,9 @@ export class MenuComponent implements AfterViewInit {
     console.log("Video Quiz Selected");
     this.router.navigate(['/quiz/videos']);
   }
+
+  startSongQuiz() {
+    console.log("Video Song Selected");
+    this.router.navigate(['/quiz/songs']);
+  }
 }
