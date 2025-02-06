@@ -65,6 +65,82 @@ html, body {
 .carousel .category .item .topic{
     color: #f1683a;
 }
+
+.difficulty-container{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: normal;
+    padding-bottom: 0.8em;
+}
+
+/* Difficulty bar container */
+.difficulty-bar {
+    width: 150px;
+    height: 12px;
+    background: lightgray;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Hard Difficulty */
+.fill-hard {
+    height: 100%;
+    width: 0%;
+    background: rgb(255, 60, 0);
+    transition: width 0.3s ease-in-out;
+    animation-delay: 1.6s!important;
+    animation: loadDifficultyHard 2s linear 1 forwards;
+}
+@keyframes loadDifficultyHard {
+    from{
+        width: 0%;
+    }
+    to{
+        width: 90%;
+    }
+}
+
+/* Medium Difficulty */
+.fill-med {
+    height: 100%;
+    width: 0%;
+    background: rgb(255, 120, 0);
+    transition: width 0.3s ease-in-out;
+    animation-delay: 1.6s!important;
+    animation: loadDifficultyMed 2s linear 1 forwards;
+}
+
+@keyframes loadDifficultyMed {
+    from{
+        width: 0%;
+    }
+    to{
+        width: 60%;
+    }
+}
+
+/* Easy Difficulty */
+.fill-easy {
+    height: 100%;
+    width: 0%;
+    background: rgb(255, 191, 0);
+    transition: width 0.3s ease-in-out;
+    animation-delay: 1.6s!important;
+    animation: loadDifficultyeasy 2s linear 1 forwards;
+}
+
+@keyframes loadDifficultyeasy {
+    from{
+        width: 0%;
+    }
+    to{
+        width: 30%;
+    }
+}
+
 .carousel .category .item .buttons{
     display: grid;
     grid-template-columns: repeat(2, 130px);
@@ -158,6 +234,7 @@ html, body {
 .carousel .category .item:nth-child(1) .content .title,
 .carousel .category .item:nth-child(1) .content .topic,
 .carousel .category .item:nth-child(1) .content .des,
+.carousel .category .item:nth-child(1) .content .difficulty-container,
 .carousel .category .item:nth-child(1) .content .buttons
 {
     transform: translateY(50px);
@@ -178,11 +255,14 @@ html, body {
 .carousel .category .item:nth-child(1) .content .topic{
     animation-delay: 1.4s!important;
 }
-.carousel .category .item:nth-child(1) .content .des{
+.carousel .category .item:nth-child(1) .content .difficulty-container{
     animation-delay: 1.6s!important;
 }
-.carousel .category .item:nth-child(1) .content .buttons{
+.carousel .category .item:nth-child(1) .content .des{
     animation-delay: 1.8s!important;
+}
+.carousel .category .item:nth-child(1) .content .buttons{
+    animation-delay: 2s!important;
 }
 /* create animation when next click */
 .carousel.next .category .item:nth-child(1) img{
@@ -283,6 +363,7 @@ html, body {
 .carousel.prev .category .item:nth-child(2) .content .author,
 .carousel.prev .category .item:nth-child(2) .content .title,
 .carousel.prev .category .item:nth-child(2) .content .topic,
+.carousel.prev .category .item:nth-child(2) .content .difficulty-container,
 .carousel.prev .category .item:nth-child(2) .content .des,
 .carousel.prev .category .item:nth-child(2) .content .buttons
 {
