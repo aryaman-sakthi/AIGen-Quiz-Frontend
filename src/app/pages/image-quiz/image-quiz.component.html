@@ -1,10 +1,29 @@
 <!-- image-quiz.component.html -->
-<div class="quiz-container">
-    <h2>Identify the AI-generated image</h2>
+<div class="container">
+  <div class="header">
+    <button (click)="gotoMenu()">Main Menu</button>
+    <h2>Identify the AI-generated Image</h2>
+    <button (click)="quit()">Quit</button>
+  </div>
+
+  <div class="timer">
+    <div class="progress" [style.width.%]="timer"></div>
+  </div>
+
+  <!-- Background Image -->
+  <div class="background"></div>
+  
+
+  <div class="quiz-container">
     <div class="image-grid">
       <img *ngFor="let img of images"
-           [src]="img.path"
-           alt="Quiz image"
-           (click)="checkAnswer(img)" />
+            [src]="img.path"
+            alt="Quiz image"
+            (click)="checkAnswer(img)"
+            (touchstart)="shrinkImage($event)"
+            (touchend)="unshrinkImage($event)" />
     </div>
+  </div>
 </div>
+
+

@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { VideoQuizService, QuizVideo } from '../../service/video-quiz.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-video-quiz',
@@ -12,7 +13,7 @@ export class VideoQuizComponent implements OnInit {
   currentVideo: QuizVideo | null = null;
   quizOver: boolean = false;
   
-  constructor(private quizService: VideoQuizService, private cdr: ChangeDetectorRef) {}
+  constructor(private quizService: VideoQuizService, private router: Router,private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
       this.initializeQuestions();
@@ -48,6 +49,18 @@ export class VideoQuizComponent implements OnInit {
       setTimeout(() => {
         this.loadQuestion(); // Load next video
       }, 500);
+    }
+  }
+
+  gotoMenu() {
+    if (confirm("Sure you wanna go back to the Menu?")){
+      this.router.navigate(['/menu']);
+    }
+  }
+
+  quit() {
+    if(confirm("You sure you wanna quit?? Its not that difficult.")){
+      this.router.navigate(['']);
     }
   }
 }

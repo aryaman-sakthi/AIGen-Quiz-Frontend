@@ -1,16 +1,24 @@
-<div *ngIf="!quizOver">
-    <h2>Is this video AI-generated or Real?</h2>
+<div class="container">
+    <div *ngIf="!quizOver">
+        <div class="header">
+            <button (click)="gotoMenu()">Main Menu</button>
+            <h2>Is this Video AI-generated?</h2>
+            <button (click)="quit()">Quit</button>
+        </div>
     
-    <video *ngIf="currentVideo" width="600" height="400"  [src]="currentVideo.path" autoplay>
-        Your browser does not support the video tag.
-    </video>
-    
-    <div>
-        <button (click)="checkAnswer(false)">Real</button>
-        <button (click)="checkAnswer(true)">AI</button>
+        <video *ngIf="currentVideo" width="600" height="400"  [src]="currentVideo.path" autoplay>
+            Your browser does not support the video tag.
+        </video>
+        
+        <div>
+            <button (click)="checkAnswer(false)">Real</button>
+            <button (click)="checkAnswer(true)">AI</button>
+        </div>
     </div>
+    
+    <div *ngIf="quizOver">
+        <h2>Quiz Over</h2>
+    </div>
+
 </div>
 
-<div *ngIf="quizOver">
-    <h2>Quiz Over</h2>
-</div>
