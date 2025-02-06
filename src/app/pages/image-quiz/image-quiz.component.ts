@@ -42,7 +42,7 @@ export class ImageQuizComponent implements OnInit {
       alert('Correct! Moving to next question...');
       setTimeout(() => {
         this.loadQuestion(); // Load a new question (could also change category here if desired)
-      }, 1000);
+      }, 500);
     } else {
       alert('Wrong! Try again.');
     }

@@ -10,6 +10,7 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { ImageQuizComponent } from './pages/image-quiz/image-quiz.component';
 import { VideoQuizComponent } from './pages/video-quiz/video-quiz.component';
 import { SongQuizComponent } from './pages/song-quiz/song-quiz.component';
+import { TextQuizComponent } from './pages/text-quiz/text-quiz.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SongQuizComponent } from './pages/song-quiz/song-quiz.component';
     ImageQuizComponent,
     VideoQuizComponent,
     SongQuizComponent,
+    TextQuizComponent,
   ],
   imports: [
     BrowserModule,
