@@ -49,7 +49,7 @@ export class SongQuizComponent implements AfterViewInit, OnDestroy{
   initializeWaveSurfer() {
     this.waveSurfer = WaveSurfer.create({
       container: '#waveform',
-      waveColor: 'lightgrey',
+      waveColor: 'rgb(171, 171, 171)',
       progressColor: 'maroon',
       barWidth: 2,
       height: 100,

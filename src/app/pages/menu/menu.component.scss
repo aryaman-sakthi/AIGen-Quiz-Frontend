@@ -43,8 +43,8 @@ header{
     background: none;
     border: none;
     color: white;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 400;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-weight: 200;
     font-size: 1.25rem;
     cursor: pointer;
     transition: opacity 0.2s ease-in-out;
@@ -184,15 +184,15 @@ header{
     margin-top: 20px;
 }
 .carousel .category .item .buttons button{
-    border: solid 1px rgba(245, 245, 245, 0.3);
-    background-color: rgba(255, 255, 255, 0.4);
+    border: solid 1.5px rgba(245, 245, 245, 0.3);
+    background-color: rgba(126, 126, 126, 0.4);
     backdrop-filter: blur(10px);
     border-radius: 18px;
     letter-spacing: 3px;
     font-family: Poppins;
     font-weight: 400;
     font-size: 1.2rem;
-    color: #eee;
+    color: #ffffff;
     transition: transform 0.1s ease-in-out;
 }
 .carousel .category .item .buttons button:active{
