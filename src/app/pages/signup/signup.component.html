@@ -1,12 +1,22 @@
-<div class="signin-container">
-    <h2>Sign In</h2>
+<div class="container">
+  <div class="background-container">
+    <div class="background-image" id="bg1"></div>
+    <div class="background-image" id="bg2"></div>
+  </div>
+  <div class="signup-container">
+    <img class="logo" src="/assets/AISOC_Logo.png"/>
+    <h2>AI or Real</h2>
     <form (ngSubmit)="signUp()">
-      <label>Name:</label>
-      <input type="text" [(ngModel)]="name" name="name" required />
-  
-      <label>Email (optional):</label>
-      <input type="email" [(ngModel)]="email" name="email" />
-  
-      <button type="submit" [disabled]="!name">Start Quiz</button>
+      <input type="text" [(ngModel)]="name" name="name" required placeholder="Name"/>
+
+      <input type="email" [(ngModel)]="email" name="email" placeholder="Email (Optional)"/>
+
+      <button type="submit" [disabled]="!name"
+              (touchstart)="button_pressed($event)"
+              (touchend)="button_released($event)">Start Quiz</button>
     </form>
+  </div>
+  <div class="message">
+    *Yes, all these background images are AI generated!
+  </div>
 </div>

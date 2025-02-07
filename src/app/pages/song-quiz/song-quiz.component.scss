@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    margin: 0;
+    background-color: #000;
+    color: #eee;
+    font-family: Poppins;
+    font-size: 12px;
+    overflow: hidden;
+}
+a{
+    text-decoration: none;
+}
+
+*{
+    margin:0;
+    padding:0;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Style for the header */
+.header {
+    width: 100%;
+    background-color: #f6f6f6;  /* Grey background */
+    color: #fff;  /* White text */
+    display: flex;
+    justify-content: space-between;  /* Space between buttons */
+    padding: 10px 20px;  /* Add some padding */
+    top: 0;  /* Position at the top */
+    left: 0;  /* Align to the left */
+    z-index: 100;  /* Ensure it stays on top of other content */
+    box-sizing: border-box;  /* Ensure padding is included in the width calculation */
+    width: 100%; /* Ensure it takes up the full width */
+    overflow: hidden; /* Prevent overflow */
+}
+
+/* Style for the buttons in the header */
+.header button {
+    background-color: #f6f6f6;  /* Dark grey background for buttons */
+    color: #180c09;  /* White text for buttons */
+    border: solid;  /* Remove default borders */
+    border-color: #f0f0f0;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;  /* Rounded corners */
+    white-space: nowrap; /* Prevent text from wrapping */
+}
+
+/* Hover effect for the buttons */
+.header button:hover {
+    background-color: #777;  /* Lighter grey when hovered */
+}
+
+h2{
+    color: #000;
+    font-family: Poppins;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: -3px;
+    
+    background-image: url('/assets/Page Assets/Background1.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: blur(2px);
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+
+    transform: scale(1.02);
+    transform-origin: center;
+}
+
+
+.timer {
+    width: 100%;
+    height: 8px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 100;
+  
+    .progress {
+      height: 100%;
+      background-color: #331811;
+      transition: width 0.1s linear;
+    }
+}
+
+.waveform-grid {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding-top: 30vh;
+    height: 20vh; /* Adjust as needed */
+    width: 100%; /* Full width */
+}
+
+#waveform {
+    width: 80%; /* Adjust size as needed */
+    max-width: 80vw; /* Prevent it from being too large */
+    height: 200px; /* Adjust based on waveform height */
+}
+
+
+.button-grid{
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 10vw;
+    padding-top: 2vh;
+    gap: 70%;
+    height: 7vh;
+}
+
+/* Real Button */
+.button-real {
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    border: 0px solid #fff6f6;
+    border-radius: 0.8rem;
+    box-sizing: border-box;
+    color: #0d172a;
+    cursor: pointer;
+    display: inline-block;
+    filter: drop-shadow(3px 3px 2px #505050);
+    font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 1rem 1.6rem;
+    text-align: center;
+    text-decoration: none #0d172a solid;
+    text-decoration-thickness: auto;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+.button-real:hover {
+    transform: scale(105%)
+  }
+
+.button-real:active {
+    transform: scale(95%);
+    background-color: #3d1912;
+    color: #fff;
+}
+
+@media (min-width: 768px) {
+  .button-real {
+    font-size: 1.125rem;
+    padding: 1rem 2rem;
+  }
+}
+
+
+
+/* Ai Button */
+.button-ai {
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    border: 0px solid #fff6f6;
+    border-radius: 0.8rem;
+    box-sizing: border-box;
+    color: #0d172a;
+    cursor: pointer;
+    display: inline-block;
+    filter: drop-shadow(3px 3px 2px #505050);
+    font-family: "Basier circle",-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 1;
+    padding: 1rem 1.6rem;
+    text-align: center;
+    text-decoration: none #0d172a solid;
+    text-decoration-thickness: auto;
+    transition: all .1s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: 0px 1px 2px rgba(166, 175, 195, 0.25);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-ai:hover {
+    transform: scale(105%)
+  }
+
+  .button-ai:active {
+    transform: scale(95%);
+    background-color: #3d1912;
+    color: #fff;
+  }
+  
+  @media (min-width: 768px) {
+    .button-ai {
+      font-size: 1.125rem;
+      padding: 1rem 2rem;
+    }
+  }
