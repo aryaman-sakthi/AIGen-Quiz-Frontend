@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
   styleUrl: './signup.component.scss'
 })
 export class SignupComponent implements OnInit{
-  url: string = "http://localhost:8089/api/users";
+  // url: string = "http://localhost:8089/api/users"; Local host url
+  url: string = "https://aigen-quiz-backend.onrender.com";
 
   name: string = '';
   email: string = '';
