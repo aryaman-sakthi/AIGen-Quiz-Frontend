@@ -35,9 +35,33 @@
       </div>
   </div>
   
-  <div *ngIf="quizOver">
-      <h2>Quiz Over</h2>
-  </div>
+    
+    <!-- Quiz Completed -->
+    <div *ngIf="quizOver">
+      <div class="header">
+          <button (click)="gotoMenu()">Main Menu</button>
+          <h2>Is this Video AI-generated?</h2>
+          <button (click)="quit()">Quit</button>
+      </div>
 
+      <div class="timer">
+          <div class="progress" [style.width.%]="100"></div>
+          </div>
+
+      <!-- Background Image -->
+      <div class="background"></div>
+
+      <div class="quiz-complete">
+        <div class="completed-text-box">
+          Congratulations!! <br>
+          You've made it to the end of the quiz.
+
+          <p>Your score:<br>
+              {{this.score}} / {{this.totalquestions}}
+          </p>
+        </div>
+        <button routerLink="/menu" class="back">Back to Menu</button>
+      </div> 
+  </div>
 </div>
 

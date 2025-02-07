@@ -18,11 +18,13 @@ export class VideoQuizService {
 
     private questionQueue: QuizVideo[] = []; // Queue for video questions
 
-    initializeQuestions() {
+    initializeQuestions(): number {
         this.questionQueue = [...this.videoList]; // copy all video data into the queue
 
         // Shuffle the questions
         this.questionQueue.sort(() => Math.random() - 0.5);
+
+        return this.questionQueue.length;
     }
 
     getNextQuestion(): QuizVideo | null {

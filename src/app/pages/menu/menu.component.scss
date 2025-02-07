@@ -97,6 +97,10 @@ header{
     color: #f1683a;
 }
 
+.carousel .category .item .des{
+    font-weight: 400;
+}
+
 .difficulty-container{
     display: flex;
     align-items: center;
@@ -110,7 +114,7 @@ header{
 .difficulty-bar {
     width: 150px;
     height: 12px;
-    background: lightgray;
+    background: rgba(161, 161, 161, 0.7);
     border-radius: 6px;
     overflow: hidden;
     position: relative;
@@ -120,7 +124,7 @@ header{
 .fill-hard {
     height: 100%;
     width: 0%;
-    background: rgb(255, 60, 0);
+    background: rgb(186, 43, 0);
     transition: width 0.3s ease-in-out;
     animation-delay: 1.6s!important;
     animation: loadDifficultyHard 2s linear 1 forwards;
@@ -180,8 +184,8 @@ header{
     margin-top: 20px;
 }
 .carousel .category .item .buttons button{
-    border: solid 1px rgba(245, 245, 245, 0.285);
-    background-color: rgba(255, 255, 255, 0.047);
+    border: solid 1px rgba(245, 245, 245, 0.3);
+    background-color: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(10px);
     border-radius: 18px;
     letter-spacing: 3px;

@@ -20,6 +20,8 @@ export class TextQuizComponent implements OnInit, OnDestroy{
   interval= 100; // 25 second
   private destroy$ = new Subject<void>(); // To handle Cleanup
   
+  score: number = 0;
+  totalquestions: number = 0;
 
   constructor(private quizService: TextQuizService, private router: Router) {}
 
@@ -37,6 +39,7 @@ export class TextQuizComponent implements OnInit, OnDestroy{
   // Initialize the questions and load the first one
   async initializeQuestions() {
     await this.quizService.initializeQuestions();
+    this.totalquestions = this.quizService.gettotalQuestionNumber(); // get total number of question
     this.loadQuestion(); // load the first question
   }
 
@@ -46,7 +49,7 @@ export class TextQuizComponent implements OnInit, OnDestroy{
       .pipe(takeUntil(this.destroy$)) // Auto-stop when component is destroyed
       .subscribe(() =>{
         if(this.timer > 0){
-          this.timer -= 0;
+          this.timer -= 0.22;
         } else {
           alert("Oops! You ran out of Time.");
           this.loadQuestion();
@@ -71,6 +74,7 @@ export class TextQuizComponent implements OnInit, OnDestroy{
     if (this.currentText) {
       if (this.currentText.isAI === isAI) {
         alert(('Correct! Moving to the next Question'));
+        this.score += 1;
       } else {
         alert('Wrong: '+this.currentText.desc);
       }

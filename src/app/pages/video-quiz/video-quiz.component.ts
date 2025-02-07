@@ -14,10 +14,13 @@ import { takeUntil } from 'rxjs';
 export class VideoQuizComponent implements OnInit, OnDestroy {
   currentVideo: QuizVideo | null = null;
   quizOver: boolean = false;
+
+  score: number = 0;
+  totalquestions: number = 0;
   
   // Timer
   timer = 100; 
-  interval= 50; // 15 second
+  interval= 500; // 15 second
   private destroy$ = new Subject<void>(); // To handle Cleanup
 
   constructor(private quizService: VideoQuizService, private router: Router,private cdr: ChangeDetectorRef) {}
@@ -35,7 +38,7 @@ export class VideoQuizComponent implements OnInit, OnDestroy {
 
   // Initialize the questions and load the first one
   initializeQuestions() {
-    this.quizService.initializeQuestions();
+    this.totalquestions = this.quizService.initializeQuestions();
     this.loadQuestion(); // load the first question
   }
 
@@ -82,6 +85,7 @@ export class VideoQuizComponent implements OnInit, OnDestroy {
     if (this.currentVideo) {
       if (this.currentVideo.isAI === isAI) {
         alert('Correct! Loading next video...');
+        this.score += 1;
       } else {
           alert('Wrong! Try the next one.');
       }

@@ -14,6 +14,8 @@ import { Router } from '@angular/router';
 export class ImageQuizComponent implements OnInit, OnDestroy{
   images: QuizImage[] = [];
 
+  quizOver: boolean = false;
+
   timer = 100; 
   interval= 50; // 15 second
   private destroy$ = new Subject<void>(); // To handle Cleanup
@@ -61,7 +63,7 @@ export class ImageQuizComponent implements OnInit, OnDestroy{
       this.images = nextQuestion; // load the question images into the component
       this.startTimer();
     } else {
-      alert('No more questions'); // To be changed later
+      this.quizOver=true;
     }
 
   }
@@ -77,6 +79,7 @@ export class ImageQuizComponent implements OnInit, OnDestroy{
       }, 500);
     } else {
       alert('Wrong! Try again.');
+      this.timer -= 20; // Penalty for wrong answer
     }
   }
 

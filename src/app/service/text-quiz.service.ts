@@ -31,6 +31,8 @@ export class TextQuizService {
         });
     }
 
+    gettotalQuestionNumber(): number { return this.questionQueue.length }
+
     getNextQuestion(): QuizText | null {
         console.log(this.questionQueue)
         // No more questions left

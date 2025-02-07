@@ -24,6 +24,17 @@
             (touchend)="unshrinkImage($event)" />
     </div>
   </div>
+
+  <div *ngIf="quizOver">
+    <div class="overlay"></div>
+    <div class="quiz-complete">
+      <div class="text-box">
+        Congratulations!! <br>
+        You've made it to the end of the quiz.
+      </div>
+      <button routerLink="/menu" class="back">Back to Menu</button>
+    </div> 
+  </div>
 </div>
 
 

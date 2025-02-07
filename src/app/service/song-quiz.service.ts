@@ -18,11 +18,13 @@ export class SongQuizService {
 
     private questionQueue: QuizSong[] = []; // Queue for songs questions
 
-    initializeQuestions() {
+    initializeQuestions(): number {
         this.questionQueue = [...this.songList]; // copy all song data into the queue
 
         // Shuffle the questions
         this.questionQueue.sort(() => Math.random() - 0.5);
+
+        return this.questionQueue.length;
     }
 
     getNextQuestion(): QuizSong | null {

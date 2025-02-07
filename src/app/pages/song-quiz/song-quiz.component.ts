@@ -18,6 +18,9 @@ export class SongQuizComponent implements AfterViewInit, OnDestroy{
 
   waveSurfer!: WaveSurfer;
 
+  score: number = 0;
+  totalquestions: number = 0;
+
   // Timer
   timer = 100; 
   interval= 50; // 15 second
@@ -38,7 +41,7 @@ export class SongQuizComponent implements AfterViewInit, OnDestroy{
 
   // Initialize the questions and load the first one
   initializeQuestions() {
-    this.quizService.initializeQuestions();
+    this.totalquestions = this.quizService.initializeQuestions();
     this.loadQuestion(); // load the first question
   }  
 
@@ -95,6 +98,7 @@ export class SongQuizComponent implements AfterViewInit, OnDestroy{
     if (this.currentSong) {
       if (this.currentSong.isAI === isAI) {
         alert('Correct! Loading next song...');
+        this.score += 1;
       } else {
           alert('Wrong! Try the next one.');
       }
