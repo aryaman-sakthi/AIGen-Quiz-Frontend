@@ -1,17 +1,43 @@
-<div *ngIf="!quizOver">
-    <h2>Guess if the text is AI-generated or real</h2>
-    
-    <div>
-        <p>{{currentText?.text}}</p>
-    </div>
+<div class="container">
+  <div *ngIf="!quizOver">
+      <div class="header">
+          <button (click)="gotoMenu()">Main Menu</button>
+          <h2>Is this Text AI-generated?</h2>
+          <button (click)="quit()">Quit</button>
+      </div>
 
-    <!-- Answer Buttons -->
-    <div class="button-group">
-      <button (click)="checkAnswer(false)">Real</button>
-      <button (click)="checkAnswer(true)">AI</button>
-    </div>
-</div>
+      <div class="timer">
+          <div class="progress" [style.width.%]="timer"></div>
+        </div>
+
+      <!-- Background Image -->
+      <div class="background"></div>
+
   
- <div *ngIf="quizOver">
-    <h2>Quiz over</h2>
- </div>
+      <!-- Text Display -->
+      <div class="text-box-container">
+        <div class="text-box">
+          <p>{{currentText?.text}}</p>
+        </div>
+      </div>
+      
+      
+      
+      <div class="button-grid">
+          <button class="button-real" 
+                  (click)="checkAnswer(false)"
+                  (touchstart)="button_pressed($event)"
+                  (touchend)="button_released($event)">Real</button>
+          <button class="button-ai" 
+                  (click)="checkAnswer(true)"
+                  (touchstart)="button_pressed($event)"
+                  (touchend)="button_released($event)">AI</button>
+      </div>
+  </div>
+  
+  <div *ngIf="quizOver">
+      <h2>Quiz Over</h2>
+  </div>
+
+</div>
+

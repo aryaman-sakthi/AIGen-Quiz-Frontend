@@ -26,12 +26,17 @@ export class SignupComponent implements OnInit{
   ];
   currentIndex: number = 0;
   activeBg: boolean = true; // Toggle between two divs
+  private bgInterval: any; // Store interval reference
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
     this.setInitialBackground();
     this.changeBackground();
+  }
+
+  ngOnDestroy(): void {
+    clearInterval(this.bgInterval); // Stop the interval when component is destroyed
   }
 
   // Set the first background
@@ -46,7 +51,7 @@ export class SignupComponent implements OnInit{
 
   // Change the background images
   changeBackground() {
-    setInterval(() => {
+    this.bgInterval = setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.images.length;
       this.activeBg = !this.activeBg; // Toggle background layers
 
@@ -77,11 +82,12 @@ export class SignupComponent implements OnInit{
     this.http.post(this.url + "/signup", bodyData, {responseType: 'text'}).subscribe((resultData: any) => 
     {
       console.log(resultData);
-      alert(`Welcome ${this.name}`);
+      this.router.navigate(['/menu']);
+      
     },
     (error) => {
       console.error("Error Signing up User: ", error)
-      alert("Error Signing up");
+      alert("Error Signing up ");
     });
   }
 

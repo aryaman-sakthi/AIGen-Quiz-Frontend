@@ -1,3 +1,8 @@
+<header>
+    <img class="logo" src="assets/AISOC_Logo.png">
+    <button (click)="quit()" class="quit-button">Quit</button>
+</header>
+
 <!-- Carousel -->
 <div class="carousel" #carousel>
     <!-- Categories -->
@@ -19,7 +24,9 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 </div>
                 <div class="buttons">
-                    <button (click)="startImageQuiz()">Start</button>
+                    <button (click)="startImageQuiz()"
+                            (touchstart)="button_pressed($event)"
+                            (touchend)="button_released($event)">Start</button>
                 </div>
             </div>
          </div>
@@ -41,7 +48,9 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 </div>
                 <div class="buttons">
-                    <button (click)="startVideoQuiz()">Start</button>
+                    <button (click)="startVideoQuiz()"
+                            (touchstart)="button_pressed($event)"
+                            (touchend)="button_released($event)">Start</button>
                 </div>
             </div>
          </div>
@@ -63,7 +72,9 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 </div>
                 <div class="buttons">
-                    <button (click)="startSongQuiz()">Start</button>
+                    <button (click)="startSongQuiz()"
+                            (touchstart)="button_pressed($event)"
+                            (touchend)="button_released($event)">Start</button>
                 </div>
             </div>
          </div>
@@ -85,7 +96,9 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
                 </div>
                 <div class="buttons">
-                    <button (click)="startTextQuiz()">Start</button>
+                    <button (click)="startTextQuiz()"
+                            (touchstart)="button_pressed($event)"
+                            (touchend)="button_released($event)">Start</button>
                 </div>
             </div>
          </div>
@@ -97,8 +110,8 @@
         <div class="item">
             <img src="assets/Menu/Menu_Images.jpg"/>
             <div class="content">
-                <div class="title"> Image Slider </div>
-                <div class="des">Description</div>
+                <div class="title"> Image Quiz </div>
+                <div class="des"></div>
             </div>
         </div>
 
@@ -106,8 +119,8 @@
         <div class="item">
             <img src="assets/Menu/Menu_Videos.jpg"/>
             <div class="content">
-                <div class="title"> Video Slider </div>
-                <div class="des">Description</div>
+                <div class="title"> Video Quiz </div>
+                <div class="des"></div>
             </div>
         </div>
 
@@ -115,8 +128,8 @@
         <div class="item">
             <img src="assets/Menu/Menu_Music.jpg"/>
             <div class="content">
-                <div class="title"> Music Slider </div>
-                <div class="des">Description</div>
+                <div class="title"> Music Quiz </div>
+                <div class="des"></div>
             </div>
         </div>
 
@@ -124,8 +137,8 @@
         <div class="item">
             <img src="assets/Menu/Menu_Text.jpg"/>
             <div class="content">
-                <div class="title"> Text Slider </div>
-                <div class="des">Description</div>
+                <div class="title"> Text Quiz </div>
+                <div class="des"></div>
             </div>
         </div>
      </div>

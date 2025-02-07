@@ -66,6 +66,10 @@ export class MenuComponent implements AfterViewInit {
     }, this.timeRunning);
   }
 
+  quit(){
+    this.router.navigate(['']);
+  }
+
   startImageQuiz() {
     console.log("Image Quiz Selected");
     this.router.navigate(['/quiz/images']);
@@ -84,5 +88,20 @@ export class MenuComponent implements AfterViewInit {
   startTextQuiz() {
     console.log("Video Song Selected");
     this.router.navigate(['/quiz/texts']);
+  }
+
+  button_pressed(event: Event) {
+    const target = event.target as HTMLElement;
+    target.style.transform = 'scale(0.8)';
+    target.style.backgroundColor = '#ffffff';
+    target.style.color = '#0f0000'
+
+  }
+
+  button_released(event: Event) {
+    const target = event.target as HTMLElement;
+    target.style.transform = 'scale(1)';
+    target.style.backgroundColor = '#ffffff0c';
+    target.style.color = '#eee'
   }
 }
