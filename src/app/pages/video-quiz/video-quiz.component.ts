@@ -20,7 +20,7 @@ export class VideoQuizComponent implements OnInit, OnDestroy {
   
   // Timer
   timer = 100; 
-  interval= 500; // 15 second
+  interval= 50; // 15 second
   private destroy$ = new Subject<void>(); // To handle Cleanup
 
   constructor(private quizService: VideoQuizService, private router: Router,private cdr: ChangeDetectorRef) {}

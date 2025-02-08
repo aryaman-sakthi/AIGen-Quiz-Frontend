@@ -13,7 +13,14 @@ export class VideoQuizService {
         { path: `assets/Videos/Video_Real_1.mp4`, isAI: false },
         { path: `assets/Videos/Video_Real_2.mp4`, isAI: false },
         { path: `assets/Videos/Video_Real_3.mp4`, isAI: false },
-        { path: `assets/Videos/Video_AI_1.mp4`, isAI: true }
+        { path: `assets/Videos/Video_Real_4.mp4`, isAI: false },
+        { path: `assets/Videos/Video_AI_1.mp4`, isAI: true },
+        { path: `assets/Videos/Video_AI_2.mp4`, isAI: true },
+        { path: `assets/Videos/Video_AI_3.mp4`, isAI: true },
+        { path: `assets/Videos/Video_AI_4.mp4`, isAI: true },
+        { path: `assets/Videos/Video_AI_5.mp4`, isAI: true },
+        { path: `assets/Videos/Video_AI_6.mp4`, isAI: true }
+
     ]; // Add more videos if you want
 
     private questionQueue: QuizVideo[] = []; // Queue for video questions
