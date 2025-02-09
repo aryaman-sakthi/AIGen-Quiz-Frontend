@@ -87,6 +87,12 @@ html, body {
         background: #7e7384;
         cursor: not-allowed;
       }
+
+      &:active {
+        transform: scale(0.9);
+        background-color: #12001b;
+        color: lightgray;
+      }
     }
 }
 

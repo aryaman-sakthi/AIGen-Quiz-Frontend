@@ -16,6 +16,8 @@ export class SignupComponent implements OnInit{
   name: string = '';
   email: string = '';
 
+  signingIn: boolean = false;
+
   // Background image player
   images: string[] = [
     '/assets/Signup/signup_bg1.jpg',
@@ -75,10 +77,16 @@ export class SignupComponent implements OnInit{
   // Save the user details to the database
   signUp() 
   {
+    if (this.signingIn) { return; } // Prevents accidently sending multiple signup requests
+
+    this.signingIn = true;  // Indicate signing in
+
     let bodyData = {
       "name" : this.name,
       "email" : this.email,
     };
+
+    console.log("HEre");
 
     this.http.post(this.url + "/signup", bodyData, {responseType: 'text'}).subscribe((resultData: any) => 
     {
@@ -89,6 +97,7 @@ export class SignupComponent implements OnInit{
     (error) => {
       console.error("Error Signing up User: ", error)
       alert("Error Signing up ");
+      this.signingIn = false;
     });
   }
 
