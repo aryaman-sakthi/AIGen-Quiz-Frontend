@@ -19,9 +19,13 @@ export class TextQuizService {
         return new Promise((resolve, reject) => {
           this.http.get<QuizText[]>('assets/Text/TextData.json').subscribe(
             data => {
-              this.questionQueue = data;
-              this.questionQueue.sort(() => Math.random() - 0.5);
-              console.log(this.questionQueue);
+              // Shuffle questions
+              const shuffeledQuestions = data.sort(() => Math.random() - 0.5)
+
+              // Select only 10 questions
+              this.questionQueue = shuffeledQuestions.slice(0,10);
+
+              //console.log(this.questionQueue);
               resolve();
             },
             error => {
@@ -34,7 +38,7 @@ export class TextQuizService {
     gettotalQuestionNumber(): number { return this.questionQueue.length }
 
     getNextQuestion(): QuizText | null {
-        console.log(this.questionQueue)
+        // console.log(this.questionQueue)
         // No more questions left
         if (this.questionQueue.length === 0) {
             return null;

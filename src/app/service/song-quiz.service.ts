@@ -11,9 +11,15 @@ export interface QuizSong {
 export class SongQuizService {
     private songList: QuizSong[] = [
         { path: "assets/Songs/Song_Real_1.mp3", isAI: false },
+        { path: "assets/Songs/Song_Real_2.mp3", isAI: false },
+        { path: "assets/Songs/Song_Real_3.mp3", isAI: false },
+        { path: "assets/Songs/Song_Real_4.mp3", isAI: false },
+        { path: "assets/Songs/Song_Real_5.mp3", isAI: false },
         { path: "assets/Songs/Song_AI_1.mp3", isAI: true },
         { path: "assets/Songs/Song_AI_2.mp3", isAI: true },
-        { path: "assets/Songs/Song_AI_3.mp3", isAI: true }
+        { path: "assets/Songs/Song_AI_3.mp3", isAI: true },
+        { path: "assets/Songs/Song_AI_4.mp3", isAI: true },
+        { path: "assets/Songs/Song_AI_5.mp3", isAI: true }
     ]; // Add more songs if needed
 
     private questionQueue: QuizSong[] = []; // Queue for songs questions

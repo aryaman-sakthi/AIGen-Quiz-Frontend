@@ -11,17 +11,18 @@ export interface QuizImage {
 })
 export class ImageQuizService {
     // Predifined list of categories 
-    private categories: string[] = ['Animal','Building','Car','Flower',
-                                    'Food','Lake','Mountain','Painting',
-                                    'Sky','Tree']; // Add more if you want more questions
+    private categories: string[] = ['Animal','Beach','Building','Car','Flower',
+                                    'Food','Jet','Lake','Mountain','Painting',
+                                    'Shrine','Sky','Tree','Volcano','Waterfall']; // Add more if you want more questions
     
     private questionQueue: string[] = [];  //Queue questions
 
     initializeQuestions() {
-        this.questionQueue = [...this.categories]; // copy categories into question queue
-
-        // Shuffle the questions 
-        this.questionQueue.sort(() => Math.random() - 0.5);
+        // Shuffle categories
+        const shuffledCategories = [...this.categories].sort(() => Math.random() - 0.5);
+    
+        // Select only 10 unique categories
+        this.questionQueue = shuffledCategories.slice(0, 10);
     }
 
     getNextQuestion(): QuizImage[] | null{
