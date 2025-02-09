@@ -23,7 +23,7 @@ export class SongQuizComponent implements AfterViewInit, OnDestroy{
 
   // Timer
   timer = 100; 
-  interval= 50; // 15 second
+  interval= 100; // 25 second
   private destroy$ = new Subject<void>(); // To handle Cleanup
   
 
@@ -69,7 +69,7 @@ export class SongQuizComponent implements AfterViewInit, OnDestroy{
       .pipe(takeUntil(this.destroy$)) // Auto-stop when component is destroyed
       .subscribe(() =>{
         if(this.timer > 0){
-          this.timer -= 0.33;
+          this.timer -= 0.22;
         } else {
           alert("Oops! You ran out of Time.");
           this.loadQuestion();

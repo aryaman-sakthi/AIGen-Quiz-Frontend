@@ -17,7 +17,7 @@ export class ImageQuizComponent implements OnInit, OnDestroy{
   quizOver: boolean = false;
 
   timer = 100; 
-  interval= 50; // 15 second
+  interval= 100; // 15 second
   private destroy$ = new Subject<void>(); // To handle Cleanup
 
   constructor(private quizService: ImageQuizService, private router: Router) {}

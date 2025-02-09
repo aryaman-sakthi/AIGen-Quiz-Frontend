@@ -20,7 +20,7 @@ export class VideoQuizComponent implements OnInit, OnDestroy {
   
   // Timer
   timer = 100; 
-  interval= 50; // 15 second
+  interval= 100; // 15 second
   private destroy$ = new Subject<void>(); // To handle Cleanup
 
   constructor(private quizService: VideoQuizService, private router: Router,private cdr: ChangeDetectorRef) {}
@@ -48,7 +48,7 @@ export class VideoQuizComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$)) // Auto-stop when component is destroyed
       .subscribe(() =>{
         if(this.timer > 0){
-          this.timer -= 0.165;
+          this.timer -= 0.33;
         } else {
           alert("Oops! You ran out of Time.");
           this.loadQuestion();
