@@ -4,6 +4,7 @@ import { Injectable } from "@angular/core";
 export interface QuizImage {
     path: string;
     isAI: boolean;
+    highlighted?: boolean; // Optional property to highlight correct image
 }
 
 @Injectable({

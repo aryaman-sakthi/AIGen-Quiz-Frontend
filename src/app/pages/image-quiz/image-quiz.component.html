@@ -18,6 +18,8 @@
     <div class="image-grid">
       <img *ngFor="let img of images"
             [src]="img.path"
+            [class.disabled]="disableInput"
+            [class.highlight]="img.highlighted"
             alt="Quiz image"
             (click)="checkAnswer(img)"
             (touchstart)="shrinkImage($event)"
@@ -31,6 +33,10 @@
       <div class="text-box">
         Congratulations!! <br>
         You've made it to the end of the quiz.
+
+        <p>Your score:<br>
+          {{this.score}} / {{this.totalquestions}}
+        </p>
       </div>
       <button routerLink="/menu" class="back">Back to Menu</button>
     </div> 
